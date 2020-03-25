@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "株式会社 奥越ライフサポート",
     author: "Ryuhei Toriyama",
-    description: "就労継続支援A型の作業所、奥越ライフサポートの説明"
+    description: "就労継続支援A型の作業所、奥越ライフサポートの説明。"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
