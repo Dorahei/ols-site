@@ -1,0 +1,59 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+        
+    # Runs a set of commands using the runners shell
+    - name: Gatsby Publish
+      uses: enriikke/gatsby-gh-pages-action@v2.1.1
+      with:
+        # A personal access token needed to push your site after it has been built.
+        access-token: 6734547383ac631ea83f1f81cf1e2585496e01ce
+        # The branch expected by GitHub to have the static files needed for your site.
+        deploy-branch: master
+        # Additional arguments that get passed to `gatsby build`.
+        gatsby-args: -prefix-paths
+
+    # Runs a set of commands using the runners shell
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      with:
+          # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
+          ftp-server: ftp://sv7473.xserver.jp:21/public_html/sample/ols/
+          # FTP account username
+          ftp-username: dorahei
+          # FTP account password
+          ftp-password: Birddragon_0017
+          # The local folder to copy, defaults to root project folder
+          local-dir: public/
+          # Passes through options into git-ftp
+          git-ftp-args: it-ftp-args
