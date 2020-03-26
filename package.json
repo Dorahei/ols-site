@@ -3,7 +3,6 @@
   "description": "OLS - 株式会社 奥越ライフサポート -",
   "version": "1.0.0",
   "author": "Ryuhei Toriyama",
-  "homepage": "./ssss/",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
