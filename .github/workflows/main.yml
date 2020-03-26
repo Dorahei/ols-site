@@ -48,7 +48,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
           # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-          ftp-server: ftp://sv7473.xserver.jp:21/dorahei.com/public_html/sample/ols/public
+          ftp-server: ftp://sv7473.xserver.jp:21/dorahei.com/public_html/sample/ols/public/
           # FTP account username
           ftp-username: dorahei
           # FTP account password
@@ -56,4 +56,4 @@ jobs:
           # The local folder to copy, defaults to root project folder
           local-dir: public/
           # Passes through options into git-ftp
-          git-ftp-args: it-ftp-args 
+          git-ftp-args: --dry-run
