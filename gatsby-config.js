@@ -4,6 +4,8 @@ module.exports = {
     author: "Ryuhei Toriyama",
     description: "就労継続支援A型の作業所、奥越ライフサポートの説明。"
   },
+  pathPrefix: `/`,
+  siteLanguage: 'ja', // HTMLの言語（ここでは日本語）
   plugins: [
     'gatsby-plugin-react-helmet',
     {
